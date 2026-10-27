@@ -1,0 +1,61 @@
+schema: colorskip.rules/1
+name: ColorSkip 示例规则
+version: 1
+
+rules:
+  # 1. 普通节点规则：仅对指定包生效
+  - id: example.node.skip
+    name: 示例应用开屏
+    packages:
+      - com.example.app
+    keywords:
+      - 跳过
+      - Skip
+      - 跳过广告
+    excludeKeywords:
+      - 跳过教程
+      - 跳过引导
+    viewIds:
+      - skip
+      - splash_skip
+    cooldownMs: 2500
+    priority: 100
+
+  # 2. 只在出现广告语境时点击“关闭”
+  - id: example.ad.close
+    name: 广告弹窗关闭
+    packages:
+      - com.example.app
+    keywords:
+      - 关闭广告
+      - 关闭
+    excludeKeywords:
+      - 关闭账号
+      - 关闭会员
+    requireAdContext: true
+    priority: 70
+
+  # 3. 广告 SDK 控件 ID 规则（不依赖文本）
+  - id: example.viewid.skip
+    name: 广告 SDK 跳过控件
+    packages:
+      - com.example.app
+    viewIds:
+      - tt_splash_skip_btn
+      - ksad_skip_view
+      - ad_skip
+    priority: 120
+
+  # 4. Flutter / 游戏引擎坐标兜底
+  # 默认要求广告语境；若页面完全读不到文字，可改为 false 并先小范围测试。
+  - id: example.flutter.coordinate
+    name: Flutter 开屏坐标
+    packages:
+      - com.example.flutterapp
+    clickMode: coordinate
+    xPercent: 91
+    yPercent: 7
+    delayMs: 800
+    cooldownMs: 5000
+    requireAdContext: true
+    priority: 200

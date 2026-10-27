@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ColorSkip</string>
+    <string name="accessibility_label">ColorSkip 广告跳过</string>
+    <string name="accessibility_summary">本地规则 · 无网络 · 需无障碍权限</string>
+    <string name="accessibility_description">识别并点击屏幕上的“跳过 / 关闭广告”按钮。规则完全离线，不申请网络权限；只有在你开启开关时才会显示悬浮球与跳过记录。</string>
+
+    <string name="channel_guard">前台守护</string>
+    <string name="channel_guard_desc">保持跳过服务在 ColorOS 后台存活</string>
+    <string name="channel_alerts">服务提醒</string>
+    <string name="channel_alerts_desc">无障碍服务被系统关闭时提醒你</string>
+
+    <string name="guard_title">ColorSkip 守护中</string>
+    <string name="guard_text_ok">本地规则运行中 · 无网络权限</string>
+    <string name="guard_text_off">无障碍服务未开启 · 点此修复</string>
+    <string name="accessibility_lost_title">无障碍服务被关闭</string>
+    <string name="accessibility_lost_text">ColorOS 可能清理了无障碍权限。点此重新开启，并在最近任务中锁定 ColorSkip。</string>
+</resources>

@@ -1,0 +1,101 @@
+{
+  "schema": "colorskip.rules/1",
+  "name": "ColorSkip 内置基础规则",
+  "version": 1,
+  "rules": [
+    {
+      "id": "builtin.cn.skip",
+      "name": "中文开屏跳过",
+      "keywords": ["跳过", "跳过广告", "跳过此广告", "关闭广告"],
+      "excludeKeywords": ["跳过片头", "跳过预告", "跳过引导", "跳过教程", "跳过登录", "跳过介绍", "跳过设置", "跳过预览"],
+      "viewIds": ["skip", "splash_skip", "ad_skip", "skip_view", "skip_btn", "tv_skip", "btn_skip", "tt_splash_skip_btn", "ksad_skip_view"],
+      "priority": 100
+    },
+    {
+      "id": "builtin.en.skip",
+      "name": "English Skip",
+      "keywords": ["Skip", "Skip Ad", "Skip Ads", "Close Ad"],
+      "excludeKeywords": ["skip intro", "skip tutorial", "skip tour", "skip onboarding", "skip to", "skip for now", "skip this", "skip next", "skip previous", "skip forward", "skip back", "skip song", "skip track", "skip video", "skip step", "skip setup", "skip sign"],
+      "viewIds": ["skip", "ad_skip", "skip_ad", "skip_button"],
+      "priority": 95
+    },
+    {
+      "id": "builtin.ad.close",
+      "name": "广告关闭按钮",
+      "keywords": ["关闭广告", "广告关闭", "关闭此广告", "关闭该广告"],
+      "excludeKeywords": ["关闭应用", "关闭账号", "关闭账户", "关闭会员", "关闭菜单", "关闭抽屉", "关闭导航"],
+      "requireAdContext": true,
+      "priority": 60
+    },
+    {
+      "id": "builtin.viewid.skip",
+      "name": "广告 SDK 控件 ID（跳过）",
+      "viewIds": ["splash_skip", "ad_skip", "skip_view", "skip_btn", "tv_skip", "btn_skip", "tt_splash_skip_btn", "ksad_skip_view", "gdt_skip"],
+      "priority": 80
+    },
+    {
+      "id": "builtin.viewid.close",
+      "name": "广告 SDK 控件 ID（关闭）",
+      "viewIds": ["ad_close", "close_ad", "splash_close", "ad_dismiss", "iv_close_ad"],
+      "requireAdContext": true,
+      "priority": 50
+    },
+    {
+      "id": "builtin.app.ecommerce",
+      "name": "电商 / 生活方式开屏",
+      "packages": [
+        "com.taobao.taobao",
+        "com.jingdong.app.mall",
+        "com.xunmeng.pinduoduo",
+        "com.xingin.xhs",
+        "com.suning.mobile.ebuy"
+      ],
+      "keywords": ["跳过", "关闭广告", "Skip"],
+      "excludeKeywords": ["跳过引导", "跳过教程"],
+      "priority": 120
+    },
+    {
+      "id": "builtin.app.video",
+      "name": "视频平台开屏",
+      "packages": [
+        "tv.danmaku.bili",
+        "com.qiyi.video",
+        "com.tencent.qqlive",
+        "com.youku.phone",
+        "com.ss.android.ugc.aweme",
+        "com.ss.android.article.news"
+      ],
+      "keywords": ["跳过广告", "关闭广告", "跳过"],
+      "excludeKeywords": ["跳过片头", "跳过预告", "跳过本集"],
+      "priority": 110
+    },
+    {
+      "id": "builtin.app.social",
+      "name": "社交 / 工具开屏",
+      "packages": [
+        "com.sina.weibo",
+        "com.zhihu.android",
+        "com.tencent.mobileqq",
+        "com.eg.android.AlipayGphone",
+        "com.netease.cloudmusic",
+        "com.baidu.BaiduMap",
+        "com.autonavi.minimap"
+      ],
+      "keywords": ["跳过", "关闭广告", "Skip"],
+      "excludeKeywords": ["跳过引导", "跳过教程"],
+      "priority": 105
+    },
+    {
+      "id": "builtin.app.browser",
+      "name": "浏览器开屏",
+      "packages": [
+        "com.UCMobile",
+        "com.quark.browser",
+        "com.baidu.searchbox"
+      ],
+      "keywords": ["跳过", "关闭广告"],
+      "excludeKeywords": ["跳过引导", "跳过教程"],
+      "priority": 100
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Build outputs
+.gradle/
+.kotlin/
+build/
+app/release/
+dist/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Local machine / IDE
+local.properties
+.idea/
+*.iml
+.vscode/
+captures/
+.externalNativeBuild/
+.cxx/
+*.log
+.DS_Store
+Thumbs.db
+
+# Signing material — NEVER commit these
+keystore.properties
+*.jks
+*.keystore
